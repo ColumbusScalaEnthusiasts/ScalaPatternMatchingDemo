@@ -41,24 +41,24 @@ class A_GradesTest extends path.FunSpec {
       }
 
       describe ("A grade with an unexpected modifier") {
-        val result = capture {
+        val resultOpt = captureException {
           f ("A*")
         }
 
         it ("causes the correct exception") {
-          assert (result.get.isInstanceOf [IllegalArgumentException])
-          assert (result.get.getMessage === "Don't know what grade modifier '*' means")
+          assert (resultOpt.get.isInstanceOf [IllegalArgumentException])
+          assert (resultOpt.get.getMessage === "Don't know what grade modifier '*' means")
         }
       }
 
       describe ("A grade with an unexpected letter") {
-        val result = capture {
+        val resultOpt = captureException {
           f ("P+")
         }
 
         it ("causes the correct exception") {
-          assert (result.get.isInstanceOf [IllegalArgumentException])
-          assert (result.get.getMessage === "Not familiar with grade 'P'")
+          assert (resultOpt.get.isInstanceOf [IllegalArgumentException])
+          assert (resultOpt.get.getMessage === "Not familiar with grade 'P'")
         }
       }
     }
@@ -105,10 +105,11 @@ class A_GradesTest extends path.FunSpec {
 
     List (-1, 101).foreach {points =>
       describe (s"An invalid score of $points") {
-        val exception = capture {A_Grades.toGrade (points)}
+        val resultOpt = captureException {A_Grades.toGrade (points)}
 
         it ("triggers the expected exception") {
-          assert (exception.get.getMessage === s"Scores must be between 0 and 100, not $points")
+          assert (resultOpt.get.isInstanceOf [IllegalArgumentException])
+          assert (resultOpt.get.getMessage === s"Scores must be between 0 and 100, not $points")
         }
       }
     }

@@ -8,7 +8,7 @@ import java.util.Date
   */
 object TestUtils {
 
-  def capture (f: => Unit): Option[Throwable] = {
+  def captureException (f: => Unit): Option[Throwable] = {
     try {
       f
       None

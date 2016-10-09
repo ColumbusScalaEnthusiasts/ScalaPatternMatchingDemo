@@ -11,13 +11,13 @@ class D_TypesTest extends path.FunSpec {
 
   describe ("When we do it wrong with pattern matching") {
     describe ("expected types") {
-      val items = List (DogWrong ("Fido"), BlenderWrong (32.0), RifleWrong (2))
+      val items = List (DogWrong ("Fido"), DogWrong ("Pookie"), BlenderWrong (32.0), RifleWrong (2))
 
       describe ("when sounded") {
         val results = items.map (soundOf (_))
 
         it ("produce the expected noises") {
-          assert (results === List ("woof", "whir", "crack"))
+          assert (results === List ("woof", "yap", "whir", "crack"))
         }
       }
     }
@@ -26,7 +26,7 @@ class D_TypesTest extends path.FunSpec {
       val item = CargoShipWrong (false)
 
       describe ("when sounded") {
-        val exceptionOpt = capture {
+        val exceptionOpt = captureException {
           soundOf (item)
         }
 
@@ -40,13 +40,13 @@ class D_TypesTest extends path.FunSpec {
 
   describe ("When we do it right with polymorphism") {
     describe ("expected types") {
-      val items = List (DogRight ("Fido"), BlenderRight (32.0), RifleRight (2))
+      val items = List (DogRight ("Fido"), DogRight ("Pookie"), BlenderRight (32.0), RifleRight (2))
 
       describe ("when sounded") {
         val results = items.map (_.sound)
 
         it ("produce the expected noises") {
-          assert (results === List ("woof", "whir", "crack"))
+          assert (results === List ("woof", "yap", "whir", "crack"))
         }
       }
     }

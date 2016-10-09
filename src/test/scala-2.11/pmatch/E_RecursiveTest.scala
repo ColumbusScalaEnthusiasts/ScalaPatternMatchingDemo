@@ -2,21 +2,21 @@ package pmatch
 
 import org.scalatest.path
 
+import pmatch.E_Recursive._
+
 /**
   * Created by dnwiebe on 9/28/16.
   */
 class E_RecursiveTest extends path.FunSpec {
 
   describe ("When summing trees") {
-    checkTreeSummerMethod ("Using standard recursion", E_Recursive.standardSum)
-    checkTreeSummerMethod ("Using delegated recursion", E_Recursive.delegatingSum)
-    checkTreeSummerMethod ("Using pattern matching", E_Recursive.patternMatchSum)
-    checkTreeSummerMethod ("Using both", E_Recursive.delegatingPMSum)
+    checkTreeSummerMethod ("Using standard recursion", standardSum)
+    checkTreeSummerMethod ("Using delegated recursion", delegatingSum)
+    checkTreeSummerMethod ("Using pattern matching", patternMatchSum)
+    checkTreeSummerMethod ("Using both", delegatingPMSum)
   }
 
-  private def checkTreeSummerMethod (description: String, method: E_Recursive.Tree => Int): Unit = {
-    import E_Recursive.Tree
-
+  private def checkTreeSummerMethod (description: String, method: Tree => Int): Unit = {
     describe (description) {
       describe ("given a single-node tree") {
         val result = method (Tree (None, None, 4))

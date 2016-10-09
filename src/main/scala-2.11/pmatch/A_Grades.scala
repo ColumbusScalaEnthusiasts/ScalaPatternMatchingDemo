@@ -5,15 +5,7 @@ package pmatch
   */
 object A_Grades {
   def fromGradeWithSwitch (grade: String): Int = {
-    basePointsWithSwitch (grade) + modifierPoints (grade)
-  }
-
-  def fromGradeDataDriven (grade: String): Int = {
-    basePointsDataDriven (grade) + modifierPoints (grade)
-  }
-
-  private def basePointsWithSwitch (grade: String): Int = {
-    grade.charAt (0) match {
+    val basePoints = grade.charAt (0) match {
       case 'A' => 95
       case 'B' => 85
       case 'C' => 75
@@ -21,14 +13,16 @@ object A_Grades {
       case 'F' => 55
       case g => throw new IllegalArgumentException (s"Not familiar with grade '$g'")
     }
+    basePoints + modifierPoints (grade)
   }
 
   val BASE_GRADES = Map ('A' -> 95, 'B' -> 85, 'C' -> 75, 'D' -> 65, 'F' -> 55)
-  private def basePointsDataDriven (grade: String): Int = {
-    BASE_GRADES.get (grade.charAt (0)) match {
+  def fromGradeDataDriven (grade: String): Int = {
+    val basePoints = BASE_GRADES.get (grade.charAt (0)) match {
       case Some (x) => x
       case None => throw new IllegalArgumentException (s"Not familiar with grade '${grade.charAt (0)}'")
     }
+    basePoints + modifierPoints (grade)
   }
 
   private def modifierPoints (grade: String): Int = {

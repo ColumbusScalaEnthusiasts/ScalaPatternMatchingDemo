@@ -2,14 +2,16 @@ package pmatch
 
 import org.scalatest.path
 
+import pmatch.C_FizzBuzz._
+
 /**
   * Created by dnwiebe on 9/27/16.
   */
 class C_FizzBuzzTest extends path.FunSpec {
 
-  checkMethod ("standardIf", C_FizzBuzz.standardIf)
-  checkMethod ("cachedIf", C_FizzBuzz.cachedIf)
-  checkMethod ("patternMatch", C_FizzBuzz.patternMatch)
+  checkMethod ("standardIf", standardIf)
+  checkMethod ("cachedIf", cachedIf)
+  checkMethod ("patternMatch", patternMatch)
 
   private def checkMethod (strategy: String, method: Int => String): Unit = {
     describe (s"For $strategy") {

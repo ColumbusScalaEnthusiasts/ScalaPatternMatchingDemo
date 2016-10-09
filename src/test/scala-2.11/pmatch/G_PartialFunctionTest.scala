@@ -72,7 +72,7 @@ class G_PartialFunctionTest extends path.FunSpec {
     }
 
     describe ("called with a value outside its domain") {
-      val result = capture {sugaredPartial (-25.0)}
+      val result = captureException {sugaredPartial (-25.0)}
 
       it ("throws a MatchError") {
         assert (result.get.isInstanceOf[MatchError])
