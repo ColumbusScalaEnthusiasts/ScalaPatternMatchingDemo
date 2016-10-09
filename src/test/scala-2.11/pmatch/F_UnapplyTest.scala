@@ -3,9 +3,9 @@ package pmatch
 import java.util.{Calendar, Date, GregorianCalendar}
 
 import org.scalatest.path
-import pmatch.J_Unapply._
+import pmatch.F_Unapply._
 
-class J_UnapplyTest extends path.FunSpec {
+class F_UnapplyTest extends path.FunSpec {
 
   val inputAndExpectedOutput = List (
     (("Ford",      "Fiesta",    2011),         Some (false)),

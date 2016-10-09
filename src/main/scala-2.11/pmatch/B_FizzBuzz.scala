@@ -3,7 +3,7 @@ package pmatch
 /**
   * Created by dnwiebe on 9/27/16.
   */
-object C_FizzBuzz {
+object B_FizzBuzz {
 
   /////////////////////
 

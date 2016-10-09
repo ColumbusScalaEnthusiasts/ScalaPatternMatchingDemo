@@ -6,8 +6,8 @@ import pmatch.utils.TestUtils._
 /**
   * Created by dnwiebe on 9/28/16.
   */
-class D_TypesTest extends path.FunSpec {
-  import D_Types._
+class C_TypesTest extends path.FunSpec {
+  import C_Types._
 
   describe ("When we do it wrong with pattern matching") {
     describe ("expected types") {

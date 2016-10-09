@@ -2,12 +2,12 @@ package pmatch
 
 import org.scalatest.path
 
-import pmatch.C_FizzBuzz._
+import pmatch.B_FizzBuzz._
 
 /**
   * Created by dnwiebe on 9/27/16.
   */
-class C_FizzBuzzTest extends path.FunSpec {
+class B_FizzBuzzTest extends path.FunSpec {
 
   checkMethod ("standardIf", standardIf)
   checkMethod ("cachedIf", cachedIf)

@@ -2,12 +2,12 @@ package pmatch
 
 import org.scalatest.path
 
-import pmatch.E_Recursive._
+import pmatch.D_Recursive._
 
 /**
   * Created by dnwiebe on 9/28/16.
   */
-class E_RecursiveTest extends path.FunSpec {
+class D_RecursiveTest extends path.FunSpec {
 
   describe ("When summing trees") {
     checkTreeSummerMethod ("Using standard recursion", standardSum)

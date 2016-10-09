@@ -3,7 +3,7 @@ package pmatch
 /**
   * Created by dnwiebe on 9/29/16.
   */
-object G_PartialFunction {
+object E_PartialFunction {
 
   val sugaredTotal: Int => Int = {n => n * n}
 

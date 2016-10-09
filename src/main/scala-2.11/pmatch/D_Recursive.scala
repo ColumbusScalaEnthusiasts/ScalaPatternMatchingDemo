@@ -3,7 +3,7 @@ package pmatch
 /**
   * Created by dnwiebe on 9/28/16.
   */
-object E_Recursive {
+object D_Recursive {
   case class Tree (left: Option[Tree], right: Option[Tree], value: Int)
 
   /////////////////////

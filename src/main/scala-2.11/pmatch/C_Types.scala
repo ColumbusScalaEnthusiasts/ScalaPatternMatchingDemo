@@ -3,7 +3,7 @@ package pmatch
 /**
   * Created by dnwiebe on 9/28/16.
   */
-object D_Types {
+object C_Types {
   case class DogWrong (name: String)
   case class BlenderWrong (capacity: Double)
   case class RifleWrong (evilFeatureCount: Int)

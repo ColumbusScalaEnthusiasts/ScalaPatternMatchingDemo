@@ -6,8 +6,8 @@ import pmatch.utils.TestUtils._
 /**
   * Created by dnwiebe on 9/28/16.
   */
-class G_PartialFunctionTest extends path.FunSpec {
-  import pmatch.G_PartialFunction._
+class E_PartialFunctionTest extends path.FunSpec {
+  import pmatch.E_PartialFunction._
 
   checkSquareFunction ("sugaredTotal", sugaredTotal)
   checkSquareFunction ("unsugaredTotal", unsugaredTotal)
